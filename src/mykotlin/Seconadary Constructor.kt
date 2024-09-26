@@ -1,0 +1,26 @@
+package mykotlin
+
+fun main(args: Array<String>) {
+    var X = Student("Mythri A S", 10)
+    println("${X.id}")//TO INTIATE THE CLASS NEED AN OBJECT
+}
+
+class Student(var name: String) {  //PARAMETER //USING CONSTRUCTOR IS AN OPTIONAL IN KOTLIN EX:class Customer constructor(name:String){}
+    //println("The name is $name") //IN ONE WORD , IF WE NEED THE VALUE FROM CLASS TO MAIN FUN "CREATE OBJECT" ,NEED THE VALUE FROM  MAIN FUN TO CLASS USE INIT BLOCK . IF INIT BLOCK NOT USE ERROR
+    var id = -1//-1 IS A DEFAULT VALUE
+
+    init {
+        println("The name is $name ")
+        //println("The name is $name & $id") //HERE ID BE -1 NOT 10 BCOZ //THE BODY OF SECONDARY CONSTRYCTOR IS CALLED AFTER THE INIT BLOCK HENCE IN INIT BLOCK IT HAS DEFAULT VALUE
+    }
+    //TO DECLARE A SECONARY CONSTRUCTOR NEED TO USE CONSTRUCTOR KEYWORD
+    //NEED TO GIVE A EXPLICT CALL TO PRIMARY CONSTRUCTOR EX : this(name) , THE name IS PRIMRY CONSTRUCTOR
+
+    constructor(name: String, id: Int) : this(name) {
+        //THE BODY OF SECONDARY CONSTRYCTOR IS CALLED AFTER THE INIT BLOCK
+        this.id = id
+        //SECONARY CONSTRUCTOR HAS ITS OWN BODY//FOR PRIMARY CONSTRUCTOR IT HAS INIT BODY
+        // IN SECONARY CONSTRUCTOR VAR IS NOT ALLOWED ,
+        // WE CONNOT DECLARE THE PROPERTY OF CLASS IN SECONARY CONSTRUCTOR
+    }
+}

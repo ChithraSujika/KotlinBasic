@@ -1,0 +1,42 @@
+package mykotlin
+
+
+//BY DEFAULT ALL THE ABSTARCT METHOD ARE OPEN IN NATURE NO NEED TO SPECIFY OPEN KEYWORD EXPLICTLY
+//IF FUNCTION IS ABSTRACT THEN CLASS MUST BE ABSTRACT
+
+fun main(args: Array<String>) {
+}
+
+
+abstract class people { //IN ONE WORD ALL ABSTRACT METHOD PRESENT IN PARENT CLASS
+    abstract var a: String //ABSTRACT VARIABLE SHOULD NOT CONATAIN DEFAULT / INTIALIZE VALUE .IT SHOULD BE EMPLTY DECLARATION
+
+    //SUPER CLASS
+    abstract fun eat() //ABSTRACT METHOD DOSEN'T CONATIN A BODY & BY DEFAULT "OPEN" IN NATURE
+    open fun getHeihts() {} //A "OPEN" FUNCTION READY TO BE OVERIDDEN
+    fun goToSchooll() {} //A "NORMAL" FUNCTION PUBLIC & FINAL IN NATURE
+}
+
+class india : people() {
+    //SUB CLASS OR DERIVED CLASS
+    override var a: String =
+        "MY3"//if we declare a class & varible is a abstact then it  should be overide & initiaize it.
+
+    //if we declare a class & function is a abstact then it  should be overide coz india inherit the people class
+    override fun eat() {
+
+    }
+}
+
+//IMP:
+
+//CANNOT CREATE INSTANCE/OBJECT OF ABSTRACT CLASS
+//NEEED TO OVERIDE THE ABSTRACT METHODS,PROPERTIES INSIDE A DERIVED/SUB CLSS
+
+//NOTE:
+
+//THE ROLE OF ABSTARCT CLASS JUST PROVIDE SET OF METHODS AND PROPERTIES
+//CLASSES CAN BE ABSTRACT IN NATURE
+//ABSTARCT METHOD HAVE NO BODY WHEN DECLARED
+//ABSTARCT METHOD CANNOT BE INITIALIZED WHEN DECLARED
+//ABSTARCT METHOD ARE PARTIALLY DEFINED CLASS
